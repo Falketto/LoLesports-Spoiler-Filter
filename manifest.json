@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "LoLesports Spoiler Filter",
+  "version": "1.0",
+  "description": "Removes spoilers from the schedule page of watch.lolesports.com",
+  "browser_action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.lolesports.com/schedule*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  }
+}
